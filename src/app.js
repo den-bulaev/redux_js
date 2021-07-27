@@ -21,7 +21,7 @@ store.dispatch(amountActions.add(500));
 store.dispatch(amountActions.clear());
 
 store2.dispatch(goodsActions.add(20));
-store2.dispatch(goodsActions.take(50));
+store2.dispatch(goodsActions.take(20));
 store2.dispatch(goodsActions.add(40));
 store2.dispatch(goodsActions.add(500));
 store2.dispatch(goodsActions.clear());

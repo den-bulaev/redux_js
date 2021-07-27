@@ -1,4 +1,7 @@
-function createStore(reduce, initialState) {
+function createStore(
+  reducer,
+  initialState = reducer(undefined, {})
+) {
   let state = initialState;
   const callbacks = [];
 
@@ -8,7 +11,7 @@ function createStore(reduce, initialState) {
     },
 
     dispatch(action) {
-      state = reduce(state, action);
+      state = reducer(state, action);
       callbacks.forEach((f) => f());
     },
 

@@ -10,12 +10,15 @@ export const actions = {
   clear: () => ({ type: CLEAR })
 }
 
-const amountReducer = (amount, action) => {
+const amountReducer = (amount=0, action) => {
   switch (action.type) {
     case ADD:
       return amount + action.value;
 
     case TAKE:
+      if (action.value > amount) {
+        return amount;
+      }
       return amount - action.value;
 
     case CLEAR:

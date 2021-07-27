@@ -5,15 +5,22 @@ const ADD = 'ADD';
 const TAKE = 'TAKE';
 const CLEAR = 'CLEAR';
 
+// Action creators
+export const actions = {
+  add: (value) => ({ type: ADD, value }),
+  take: (value) => ({ type: TAKE, value }),
+  clear: () => ({ type: CLEAR })
+}
+
 const amountReducer = (amount, action) => {
   switch (action.type) {
-    case 'add':
+    case ADD:
       return amount + action.value;
 
-    case 'take':
+    case TAKE:
       return amount - action.value;
 
-    case 'clear':
+    case CLEAR:
       return 0;
 
     default:

@@ -1,5 +1,5 @@
 import createStore from './redux.js';
-import amountReducer, { actions } from './store.js';
+import amountReducer, { actions } from './store/amount.js';
 
 const store = createStore(amountReducer);
 const store2 = createStore(amountReducer, 100);

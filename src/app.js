@@ -1,4 +1,7 @@
-import store, { actions } from './store.js';
+import createStore from './redux.js';
+import amountReducer, { actions } from './store.js';
+
+const store = createStore(amountReducer, 100);
 
 store.subscribe(() => {
   console.log(store.getState());

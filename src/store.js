@@ -1,5 +1,3 @@
-import createStore from './redux.js';
-
 // Action types
 const ADD = 'ADD';
 const TAKE = 'TAKE';
@@ -28,6 +26,4 @@ const amountReducer = (amount, action) => {
   }
 };
 
-const store = createStore(amountReducer, 100);
-
-export default store;
+export default amountReducer;

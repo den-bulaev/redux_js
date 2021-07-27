@@ -7,10 +7,10 @@ const CLEAR = 'CLEAR';
 export const actions = {
   add: (value) => ({ type: ADD, value }),
   take: (value) => ({ type: TAKE, value }),
-  clear: () => ({ type: CLEAR })
-}
+  clear: () => ({ type: CLEAR }),
+};
 
-const amountReducer = (amount=0, action) => {
+const amountReducer = (amount = 0, action) => {
   switch (action.type) {
     case ADD:
       return amount + action.value;

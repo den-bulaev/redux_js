@@ -1,6 +1,6 @@
 function createStore(
   reducer,
-  initialState = reducer(undefined, {})
+  initialState = reducer(undefined, {}),
 ) {
   let state = initialState;
   const callbacks = [];

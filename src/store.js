@@ -1,5 +1,10 @@
 import createStore from './redux.js';
 
+// Action types
+const ADD = 'ADD';
+const TAKE = 'TAKE';
+const CLEAR = 'CLEAR';
+
 const amountReducer = (amount, action) => {
   switch (action.type) {
     case 'add':

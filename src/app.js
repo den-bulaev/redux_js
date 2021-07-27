@@ -1,27 +1,35 @@
 /* eslint-disable import/extensions */
-import createStore from './redux.js';
+import createStore, { combineReducers } from './redux.js';
 import amountReducer, { actions as amountActions } from './store/amount.js';
 import goodsReducer, { actions as goodsActions } from './storeHouse/goods.js';
 
-const store = createStore(amountReducer);
-const store2 = createStore(goodsReducer);
+const initialState = {
+  amount: 0,
+  goods: [],
+};
 
-store2.subscribe(() => {
-  console.log(store2.getState());
+const reducer = combineReducers({
+  amount: amountReducer,
+  goods: goodsReducer,
 });
+
+const store = createStore(reducer, initialState);
 
 store.subscribe(() => {
   console.log(store.getState());
 });
 
 store.dispatch(amountActions.add(20));
-store.dispatch(amountActions.take(50));
-store.dispatch(amountActions.add(40));
-store.dispatch(amountActions.add(500));
-store.dispatch(amountActions.clear());
+store.dispatch(goodsActions.add(20));
 
-store2.dispatch(goodsActions.add(20));
-store2.dispatch(goodsActions.take(20));
-store2.dispatch(goodsActions.add(40));
-store2.dispatch(goodsActions.add(500));
-store2.dispatch(goodsActions.clear());
+store.dispatch(amountActions.take(10));
+store.dispatch(goodsActions.take(20));
+
+store.dispatch(amountActions.add(40));
+store.dispatch(goodsActions.add(40));
+
+store.dispatch(amountActions.add(500));
+store.dispatch(goodsActions.add(500));
+
+store.dispatch(amountActions.clear());
+store.dispatch(goodsActions.clear());

@@ -21,4 +21,19 @@ function createStore(
   };
 }
 
+export function combineReducers(reducers) {
+  return (state = {}, action) => {
+    const result = {};
+
+    // eslint-disable-next-line no-restricted-syntax
+    for (const key in reducers) {
+      if (key) {
+        result[key] = reducers[key](state[key], action);
+      }
+    }
+
+    return result;
+  };
+}
+
 export default createStore;

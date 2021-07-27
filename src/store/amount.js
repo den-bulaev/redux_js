@@ -1,7 +1,7 @@
 // Action types
-const ADD = 'ADD';
-const TAKE = 'TAKE';
-const CLEAR = 'CLEAR';
+const ADD = 'amount/ADD';
+const TAKE = 'amount/TAKE';
+const CLEAR = 'amount/CLEAR';
 
 // Action creators
 export const actions = {

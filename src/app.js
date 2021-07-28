@@ -1,7 +1,7 @@
 /* eslint-disable import/extensions */
 import createStore, { combineReducers } from './redux.js';
 import amountReducer, { actions as amountActions } from './store/amount.js';
-import goodsReducer, { actions as goodsActions } from './storeHouse/goods.js';
+import goodsReducer, { actions as goodsActions } from './store/goods.js';
 
 const initialState = {
   amount: 0,
